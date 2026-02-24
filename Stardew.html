@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stardew Valley</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: #F9F0DF;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-image: url('Images/HeaderImage.png');
+      background-size: cover;
+      background-position: center;
+      height: 181px;
+      width: 100%;
+    }
+
+    .main-container { position: relative; background-color: #F9F0DF; flex: 1; }
+
+    .menu-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px 24px;
+      background-color: #F9F0DF;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      transition: all 0.3s ease;
+      margin-top: -15px;
+    }
+    .menu-bar img { width: 20px; height: auto; }
+    .menu-bar h3 { margin: 0 0 0 8px; color: #37414D; font-size: 18px; }
+
+    .sidebar {
+      position: absolute;
+      left: -250px;
+      top: 0;
+      bottom: 0;
+      width: 250px;
+      background-color: #F9F0DF;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      transition: left 0.3s ease;
+      z-index: 15;
+      overflow-y: auto;
+      padding-top: 0;
+    }
+    .sidebar.open { left: 0; }
+    .sidebar .nav-link { display:block; padding:16px 24px; text-decoration:none; color:#37414D; font-weight:600; border-bottom:1px solid #E0D5C0; }
+    .sidebar .nav-link:hover, .sidebar .nav-link.active { background-color:#F7CB66; color:#37414D; }
+
+    .content { transition: margin-left 0.3s ease; padding: 20px; }
+    .content.shifted { margin-left: 250px; }
+
+
+    .text-block {
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero .back-arrow {
+      width: 60px;
+      height: auto;
+      display: block;
+      margin: 0;
+    }
+    .hero h1 {
+      color: #37414D;
+      font-size: 32px;
+      margin: 0;
+      padding: 36px;
+    }
+    .text-block p { text-align: justify; margin-top: 12px; }
+
+    /* Definition list: same grid rules as first page */
+    .text-block dl {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 0.5em 1em;
+      align-items: start;
+      margin: 0;
+    }
+    .text-block dt { font-weight: bold; margin: 0; justify-self: start; padding: 0; }
+    .text-block dd { margin: 0; padding: 0; text-align: left; }
+
+    /* Rating stars inline */
+    .rating-stars { display: inline; }
+    .rating-stars img { width: 18px; height: auto; vertical-align: middle; }
+
+    /* Banner image */
+    .banner-image {
+      max-width: 50%;
+      height: auto;
+      padding: 64px 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Decorative line centered */
+    img[alt="Linea Separadora"] {
+      display: block;
+      margin: 8px auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Meme image */
+    .meme-image { max-width: 30%; height: auto; margin: 64px auto; display: block; }
+
+    /* Footer */
+    footer {
+      background-color: #BD6049;
+      padding: 24px;
+      text-align: left;
+      clear: both;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      color: #F9F0DF;
+    }
+    footer p, footer a, footer h3, footer .back-link { color: #F9F0DF !important; }
+    .Logolmage { width: 80px; max-width: 100%; height: auto;padding: 12px }
+
+    /* Keep float-based cat behavior if used */
+    .cat { float: right; margin: 24px; max-width: 100%; height: auto; }
+
+    /* Small screens: stack hero to avoid cramped layout */
+    @media (max-width: 520px) {
+      .text-block { width: 100%; padding: 0 12px; }
+      .hero { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .banner-image { padding: 32px 0; }
+      .text-block dl { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+	<header></header>
+<body id="top">
+<div class="main-container">
+  <div class="menu-bar" id="menuBar">
+      <img src="Images/MenuHamburger.png" alt="Menu Hamburger" width="20" height="20">
+      <h3>Menu</h3>
+  </div>
+
+    <div id="sidebar" class="sidebar">
+      <a href="index.html" class="nav-link">HOME</a>
+      <a href="Stardew.html" class="nav-link">Stardew Valley</a>
+      <a href="LoL.html" class="nav-link">League of Legends</a>
+      <a href="OOT.html" class="nav-link">Ocarina of Time</a>
+    </div>
+
+    <div class="content">
+      <img src="Images/Line.png" alt="Linea Separadora"><br>
+
+      <div class="text-block">
+        <div class="hero">
+          <a href="Index.html" aria-label="Volver al inicio">
+            <img src="Images/BackArrow.png" alt="Back Button" class="back-arrow">
+          </a>
+          <h1>Stardew Valley</h1>
+        </div>
+      </div>
+
+      <img src="Images/Line.png" alt="Linea Separadora" style="margin-top:24px; max-width:100%;">
+      <br>
+
+      <img src="Images/StardewPhoto1.png" alt="Banner Stardew Valley" class="banner-image">
+
+      <div class="text-block">
+        <h2>Descripción</h2>
+        <p>
+          Stardew Valley es un videojuego de simulación de granja desarrollado por Eric Barone
+          (ConcernedApe). Fue lanzado en febrero de 2016 y desde entonces se ha convertido en un
+          fenómeno cultural. El jugador hereda una parcela de tierra en un pequeño pueblo y debe
+          restaurarla cultivando, criando animales, minando, pescando y socializando con los
+          habitantes locales. Ofrece un mundo abierto relajante con elementos de rol y
+          personalización.
+        </p>
+
+        <h2>Características</h2>
+        <dl>
+          <dt>Género</dt>
+          <dd>Simulación, rol</dd>
+
+          <dt>Desarrollador</dt>
+          <dd>Eric Barone (Concerned Ape)</dd>
+
+          <dt>Lanzamiento</dt>
+          <dd>26 de febrero de 2016</dd>
+
+          <dt>Modos de juego</dt>
+          <dd>Un jugador, Cooperativo</dd>
+
+          <dt>Mi rating</dt>
+          <dd class="rating-stars">
+            <img src="Images/RatingStarsFull.png" alt="Rating star Full">
+            <img src="Images/RatingStarsFull.png" alt="Rating star Full">
+            <img src="Images/RatingStarsFull.png" alt="Rating star Full">
+            <img src="Images/RatingStarsFull.png" alt="Rating star Full">
+            <img src="Images/RatingStarsFull.png" alt="Rating star Full">
+          </dd>
+        </dl>
+      </div>
+
+      <img src="Images/StardewPhoto2.png" alt="Stardew Meme Photo" class="meme-image">
+    </div>
+</div>
+
+<footer>
+    <h3>Sigueme en mis redes</h3>
+    <div>
+      <a href="https://www.X.com/" target="_blank"><img src="Images/Xlogo.png" alt="Twitter X" class="Logolmage"></a>
+      <a href="https://www.instagram.com/" target="_blank"><img src="Images/InstagramLogo.png" alt="Instagram" class="Logolmage"></a>
+      <a href="https://www.facebook.com/" target="_blank"><img src="Images/FacebookLogo.png" alt="Facebook" class="Logolmage"></a>
+      <a href="https://www.TikTok.com/" target="_blank"><img src="Images/TikTokLogo.png" alt="TikTok" class="Logolmage"></a>
+    </div>
+    <p><a href="#top" class="back-link">Volver al Principio</a></p>
+  </footer>
+
+  <script>
+    const menuBar = document.getElementById("menuBar");
+    const sidebar = document.getElementById("sidebar");
+    const content = document.querySelector(".content");
+
+    menuBar.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      content.classList.toggle("shifted");
+      highlightActivePage();
+    });
+
+    function highlightActivePage() {
+      const links = document.querySelectorAll(".sidebar .nav-link");
+      links.forEach(link => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+    }
+    highlightActivePage();
+
+    function adjustSidebarPadding() {
+      const menuBarHeight = menuBar.offsetHeight;
+      sidebar.style.paddingTop = menuBarHeight + "px";
+    }
+
+    window.addEventListener("load", adjustSidebarPadding);
+    window.addEventListener("resize", adjustSidebarPadding);
+  </script>
+</body>
+</html>
