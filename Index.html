@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+  <!-- Font Embed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* RESET & BASE */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #F9F0DF;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      text-align: center;
+    }
+
+    header {
+      background-image: url('Images/HeaderImage.png');
+      background-size: cover;
+      background-position: center;
+      height: 181px;
+      width: 100%;
+    }
+
+    /* Main container - holds everything between header and footer */
+    .main-container {
+      position: relative;
+      background-color: #F9F0DF;
+      min-height: 200px; /* ensures container has height even if empty */
+    }
+
+    /* Menu bar - sticky and on top */
+    .menu-bar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px 24px;
+      background-color: #F9F0DF;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      position: sticky;
+      top: 0;
+      z-index: 20;      /* higher than sidebar */
+      transition: all 0.3s ease;
+      margin-top: -15px;
+    }
+
+    .menu-bar h3 {
+      margin: 0 0 0 8px;
+      color: #37414D;
+      font-size: 14px;
+    }
+
+    /* Sidebar - initially hidden off the left */
+    .sidebar {
+      position: absolute;
+      left: -250px;
+      top: 0;
+      bottom: 0;
+      width: 250px;
+      background-color: #F9F0DF;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      transition: left 0.3s ease;
+      z-index: 15;
+      overflow-y: auto;  /* scroll if many links */
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar .nav-link {
+      display: block;
+      padding: 16px 24px;
+      text-decoration: none;
+      color: #37414D;
+      font-weight: 600;
+      border-bottom: 1px solid #E0D5C0;
+    }
+
+    .sidebar .nav-link:hover,
+    .sidebar .nav-link.active {
+      background-color: #F7CB66;
+      color: #37414D;
+    }
+
+    /* Main content - shifts when sidebar opens */
+    .content {
+      transition: margin-left 0.3s ease;
+    }
+
+    .content.shifted {
+      margin-left: 250px;
+    }
+
+    /* Navigation buttons */
+    .nav-button {
+      background-color: #6697BA;
+      border-radius: 32px;
+      color: #F9F0DF;
+      font-size: 18px;
+      padding: 16px;
+      border: none;
+      margin: 16px auto;
+      display: block;
+      width: 300px;
+      max-width: 90%;   /* responsive */
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .nav-button:hover {
+      background-color: #F7CB66;
+      color: #37414D;
+    }
+
+    /* Cat image */
+    .cat {
+      margin: 24px;
+      max-width: 40%;
+      height: auto;
+      width: auto;       /* maintain aspect ratio */
+    }
+
+    /* Footer */
+    footer {
+      background-color: #BD6049;
+      padding: 24px;
+      text-align: left;
+      clear: both;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      color: #F9F0DF;
+      font-size: 16px;
+      margin: 24px 24px;
+    }
+
+    footer a {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    footer a img {
+      vertical-align: middle;
+      max-width: 100%;
+      height: auto;
+    }
+
+    footer .back-link {
+      color: #F9F0DF;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    .Logolmage {
+      width: 80px;
+      max-width: 100%;
+      height: auto;
+		padding: 12px
+    }
+
+    h3 {
+      color: #F9F0DF;
+      font-size: 14px;
+      margin: 24px;
+    }
+
+    /* Decorative line image (responsive) */
+    img[alt="Linea Separadora"] {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body id="top">
+  <!-- Header -->
+  <header>
+	</header>
+
+  <!-- Main container -->
+  <div class="main-container">
+    <!-- Menu Bar -->
+    <div class="menu-bar" id="menuBar">
+      <img src="Images/MenuHamburger.png" alt="Menu Hamburger" width="20" height="20">
+      <h3>Menu</h3>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <a href="index.html" class="nav-link">HOME</a>
+      <a href="Stardew.html" class="nav-link">Stardew Valley</a>
+      <a href="LoL.html" class="nav-link">League of Legends</a>
+      <a href="OOT.html" class="nav-link">Ocarina of Time</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <img src="Images/Line.png" alt="Linea Separadora">
+      <h1>Mis juegos favoritos</h1>
+      <p>Angela Garcia Gastelum</p>
+      <img src="Images/Line.png" alt="Linea Separadora" style="margin-top:50px; max-width:100%;">
+
+      <!-- Navigation Buttons -->
+      <nav>
+        <a href="Stardew.html" class="nav-button">Stardew Valley</a>
+        <a href="LoL.html" class="nav-button">League of Legends</a>
+        <a href="OOT.html" class="nav-button">TLOZ - Ocarina of Time</a>
+      </nav>
+
+      <!-- Silly cat image -->
+      <div align="right"><img src="Images/Gato.png" alt="Gato" class="cat"></div>
+    </div>
+  </div>
+  <!-- End main container -->
+
+  <!-- Footer -->
+  <footer>
+    <h3>Sigueme en mis redes</h3>
+    <div>
+      <a href="https://www.X.com/" target="_blank"><img src="Images/Xlogo.png" alt="Twitter X" class="Logolmage"></a>
+      <a href="https://www.instagram.com/" target="_blank"><img src="Images/InstagramLogo.png" alt="Instagram" class="Logolmage"></a>
+      <a href="https://www.facebook.com/" target="_blank"><img src="Images/FacebookLogo.png" alt="Facebook" class="Logolmage"></a>
+      <a href="https://www.TikTok.com/" target="_blank"><img src="Images/TikTokLogo.png" alt="TikTok" class="Logolmage"></a>
+    </div>
+    <p><a href="#top" class="back-link">Volver al Principio</a></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const menuBar = document.getElementById("menuBar");
+    const sidebar = document.getElementById("sidebar");
+    const content = document.querySelector(".content");
+
+    // --- Toggle sidebar on menu click ---
+    menuBar.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      content.classList.toggle("shifted");
+      highlightActivePage();
+    });
+
+    // --- Highlight current page in sidebar ---
+    function highlightActivePage() {
+      const links = document.querySelectorAll(".sidebar .nav-link");
+      links.forEach(link => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+    }
+    highlightActivePage();
+
+    // --- Adjust sidebar's padding-top to match menu bar height ---
+    function adjustSidebarPadding() {
+      const menuBarHeight = menuBar.offsetHeight;
+      sidebar.style.paddingTop = menuBarHeight + "px";
+    }
+
+    // Run on load and resize
+    window.addEventListener("load", adjustSidebarPadding);
+    window.addEventListener("resize", adjustSidebarPadding);
+  </script>
+</body>
+</html>
